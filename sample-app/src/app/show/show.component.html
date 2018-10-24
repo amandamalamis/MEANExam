@@ -1,0 +1,16 @@
+<div *ngIf="showPet">
+  <h2> Details about: {{showPet.name}} </h2> <br>
+  <h3> Pet type: {{showPet.type}} </h3> <br>
+  <h3> Description: {{showPet.description}} </h3> <br>
+  <h4 *ngIf="showPet.skill1"> Skill : {{showPet.skill1}} </h4> <br>
+  <h4 *ngIf="showPet.skill2"> Skill : {{showPet.skill2}} </h4> <br>
+  <h4 *ngIf="showPet.skill3"> Skill : {{showPet.skill3}} </h4> <br>
+
+</div>
+<!-- 
+  <div *ngFor="let pet of pets"><br>
+  <button (click)='onDelete(pet)'> Adopt this Pet </button>
+
+</div> -->
+
+<button type='button' [routerLink]="['/']">Go Home </button>

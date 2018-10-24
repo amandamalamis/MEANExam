@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<a [routerLink]="['/pets/new']"></a>
+<p class='text-info'>
+Know of a pet needing a home?</p>
+<body>
+  <!-- {{ error }} -->
+    <!-- {{ error | json }} -->
+    <p *ngIf='error.name'> {{error.name.message}} </p>
+    <p *ngIf='error.type'> {{error.type.message }} </p>
+    <p *ngIf='error.description'> {{error.description.message}} </p>
+
+  <form (submit)='onSubmitAdd()'>
+    <div class='form-group'>
+      Pet Name: <input type="text" name="newPet.name" [(ngModel)]="newPet.name" /> <br> <br>
+      Pet Type: <input type="text" name="newPet.type" [(ngModel)]="newPet.type" /> <br> <br>
+      Pet Description: <input type="text" name="newPet.description" [(ngModel)]="newPet.description" /> <br> <br>
+      
+      Pet Skills: (optional): <br> <br>
+      Skill 1: <input type="text" name="newPet.skill1" [(ngModel)]="newPet.skill1" /> <br> <br>
+      Skill 2: <input type="text" name="newPet.skill2" [(ngModel)]="newPet.skill2" /> <br> <br>
+      Skill 3: <input type="text" name="newPet.skill3" [(ngModel)]="newPet.skill3" /> <br> <br>
+
+      <input type="submit" value="Create" />
+    </div>
+  </form>
+  <br><br>
+  <button type='button' [routerLink]="['/pets']">Cancel </button>
+
+</body>
+</html>

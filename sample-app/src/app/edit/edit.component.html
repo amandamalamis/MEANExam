@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<p class='text-info'>
+  Edit this pet:
+</p>
+<body>
+    <!-- {{ error }} -->
+    <p *ngIf='error.name'> {{error.name.message}} </p>
+    <p *ngIf='error.type'> {{error.type.message}} </p>
+    <!-- <p *ngIf='error.url'> {{error.url.message}} </p> -->
+    <p *ngIf='error.description'> {{error.description.message}} </p>
+
+
+    <form (submit)="onSubmitEdit()">
+    <input type = "hidden" value= "editPet._id">
+      Pet Name: <input type="text" name="editPet.name" [(ngModel)]="editPet.name" placeholder= "editPet.name"/> <br> <br>
+      Pet Type: <input type="text" name="editPet.type" [(ngModel)]="editPet.type" placeholder= "editPet.type"/> <br> <br>
+      Pet Description: <input type="text" name="editPet.description" [(ngModel)]="editPet.description" placeholder= "editPet.description"/> <br> <br>
+      Skill 1:  <input type="text" name="editPet.skill1" [(ngModel)]="editPet.skill1" placeholder= "editPet.skill1"/> <br> <br>
+      Skill 2:  <input type="text" name="editPet.skill2" [(ngModel)]="editPet.skill2" placeholder= "editPet.skill2"/> <br> <br>
+      Skill 3:  <input type="text" name="editPet.skill3" [(ngModel)]="editPet.skill3" placeholder= "editPet.skill3"/> <br> <br> 
+
+      <input type="submit" value="Edit"/> <br>
+    </form>
+    
+<button type='button' [routerLink]="['/']">Go Home </button>
+</body>
+</html>

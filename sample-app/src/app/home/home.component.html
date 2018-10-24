@@ -1,0 +1,27 @@
+<p class='text-info'>
+</p>
+
+  <h2> These pets are looking for a home! </h2> <br>
+
+  <div *ngFor="let pet of pets"><br>
+    <ul>
+      <li>Pet Name: {{pet.name}}</li> 
+      <li>Pet Type: {{pet.type}}</li>
+
+      <!-- <li>Pet Description: {{pet.description}}</li> 
+
+      <p *ngIf="pet.skill1"> Skill: {{pet.skill1}} </p>
+      <p *ngIf="pet.skill2"> Skill: {{pet.skill2}} </p>
+      <p *ngIf="pet.skill3"> Skill: {{pet.skill3}}</p> <br> -->
+    </ul>
+  
+    <p> Actions: <button [routerLink]="['/pets/edit', pet._id]"> Edit Pet</button>
+    <!-- <button (click)="showData(task)">Show Details</button> -->
+    <button [routerLink]="['/pets', pet._id]">Show Details</button>
+  
+    <button (click)='onDelete(pet)'>Adopt this Pet!</button> </p>
+    <!-- use this one -->
+
+
+    <br>
+  </div>
